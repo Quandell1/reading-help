@@ -1,0 +1,27 @@
+ext {
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.protobufVersion = '0.9.0'
+    ext.nav_version = '2.5.3'
+    ext.refine_version = '4.1.0'
+    ext.tensorflow_version = '0.3.0'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.0.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20"
+        classpath "com.google.protobuf:protobuf-gradle-plugin:$protobufVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath "dev.rikka.tools.refine:gradle-plugin:$refine_version"
+        classpath "com.google.android.gms:oss-licenses-plugin:0.10.6"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
